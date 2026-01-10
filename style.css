@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --light-color: #fff;
+    --dark-light-color: #2f343e;
+    --dark-color: #282c33;
+    --err-color: #d07277;
+    --success-color: #89a371;
+    --draw-color: #74ade8;
+}
+html {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-size: 16px;
+}
+
+body {
+    background: var(--dark-color);
+    color: var(--light-color);
+    text-align: center;
+}
+
+/*UTILlTY CLASSES*/
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 4rem;
+}
+
+a {
+    color: var(--light-color);
+    text-decoration: none;
+}
+
+/*HEADER*/
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--dark-light-color);
+}
+
+header .container a {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+}
+
+header #light-mode {
+    color: yellow;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+
+header #dark-mode {
+    color: #282c33;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+
+header .donate-btn-1 {
+    background: transparent;
+    outline: none;
+    border: 0.2rem solid var(--light-color);
+    color: var(--light-color);
+    padding: 1rem 3rem;
+    border-radius: 3rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    transition: all 0.2s ease-in;
+}
+
+header .donate-btn-1:hover {
+    background: var(--light-color);
+    color: var(--dark-color);
+    transform: scale(1.05);
+}
+
+.game-header h1 {
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-size: 2.5rem;
+}
+
+.game-header p {
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+main .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-score-board {
+    margin-top: 4rem;
+    width: 287px;
+}
+
+.score-board {
+    margin-bottom: 1rem;
+}
+
+.game-score-board .scores {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.scores #human-score-el,
+.scores #ai-score-el {
+    margin: 2rem 0;
+}
+
+.scores .human-score {
+    border-right: 0.1rem solid var(--light-color);
+}
+.scores .ai-score {
+    border-left: 0.1rem solid var(--light-color);
+}
+
+.scores .player-el {
+    letter-spacing: 0.2rem;
+    padding-bottom: 1rem;
+}
+
+#display-el {
+    margin: 2rem 0;
+}
+
+.cards-btn {
+    background: transparent;
+    color: var(--light-color);
+    padding: 1rem;
+    outline: none;
+    border: 0.1rem solid var(--light-color);
+    border-radius: 1rem;
+    margin: 0 0.2rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.3s ease-in;
+}
+
+.cards-btn:hover {
+    transform: scale(1.05);
+}
+
+#reset-btn {
+    background: var(--light-color);
+    color: var(--dark-light-color);
+    padding: 1rem 3rem;
+    border-radius: 2rem;
+    outline: none;
+    border: none;
+    margin: 1rem 0;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease-in;
+}
+#reset-btn:hover {
+    transform: scale(1.05);
+}
+
+.donate-btn-2 {
+    display: none;
+}
+
+#get-help {
+    margin: 1rem 0;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media (max-width: 474px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 374px) {
+    html {
+        font-size: 16px;
+    }
+    #scissors-btn {
+        margin: 0.5rem 0;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    #reset-btn {
+        width: 100%;
+    }
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .donate-btn-1 {
+        display: none;
+    }
+
+    .donate-btn-2 {
+        display: block;
+        background: transparent;
+        outline: none;
+        border: 0.2rem solid var(--light-color);
+        color: var(--light-color);
+        padding: 1rem 3rem;
+        border-radius: 3rem;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 0.1rem;
+        transition: all 0.2s ease-in;
+        margin-top: 1rem;
+    }
+
+    .donate-btn-2:hover {
+        background: var(--light-color);
+        color: var(--dark-color);
+        transform: scale(1.05);
+    }
+}

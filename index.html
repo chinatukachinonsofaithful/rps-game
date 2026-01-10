@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Rock Paper Scissors</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="font-awesome/css/all.css" />
+    </head>
+    <body>
+        <!--NAV BAR-->
+        <header>
+            <div class="container">
+                <div class="left-nav">
+                    <a href="">RPS Game</a>
+                </div>
+                <div class="right-nav">
+                    <span id="light-mode" class="fa fa-sun"></span>
+                    <span id="dark-mode" class="fa fa-moon"></span>
+                    <button type="button" class="donate-btn-1" id="donate">
+                        Donate <span class="fa fa-hand-holding-heart"></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!--GAME-->
+        <main>
+            <div class="container">
+                <!--SCORE BOARD-->
+                <div class="game-score-board">
+                    <h2 class="score-board">Score Board</h2>
+                    <!--SCORES-->
+                    <div class="scores">
+                        <!--HUMAN SCORE-->
+                        <div class="human-score">
+                            <h1 id="human-score-el">0</h1>
+                            <h2 class="player-el">Human</h2>
+                            <h3 class="chosen-human-card-el"></h3>
+                        </div>
+                        <!--AI SCORE-->
+                        <div class="ai-score">
+                            <h1 id="ai-score-el">0</h1>
+                            <h2 class="player-el">AI</h2>
+                            <h3 class="chosen-ai-card-el"></h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!--DISPLAY-->
+                <h2 id="display-el">Start Game</h2>
+
+                <!--CARDS-->
+                <div class="cards">
+                    <!--ROCK-->
+                    <button type="button" class="cards-btn" id="rock-btn">
+                        Rock
+                    </button>
+                    <!--PAPPER-->
+                    <button type="button" class="cards-btn" id="papper-btn">
+                        Papper
+                    </button>
+                    <!--SCISSORS-->
+                    <button type="button" class="cards-btn" id="scissors-btn">
+                        Scissors
+                    </button>
+                </div>
+                <!--RESET BTN-->
+                <button type="button" id="reset-btn">Reset</button>
+                <p id="game-count-el">Game Count:</p>
+                <p id="get-help">How to play?</p>
+                <button type="button" class="donate-btn-2" id="donate">
+                    Donate <span class="fa fa-hand-holding-heart"></span>
+                </button>
+            </div>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
+</html>
