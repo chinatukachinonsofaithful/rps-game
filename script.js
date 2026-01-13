@@ -1,4 +1,4 @@
-const rps = ["Rock", "Paper", "Scissors"];
+const rps = ["✊Rock", "🤚Paper", "✌️Scissors"];
 const msg = ["Start Game", "Draw", "You Win", "You Lose"];
 const root = document.documentElement;
 const lightMode = document.querySelector("#light-mode");
@@ -10,6 +10,9 @@ const resetBtn = document.querySelector("#reset-btn");
 const getHelp = document.querySelector("#get-help");
 const donate = document.querySelector("#donate");
 const secondDonate = document.querySelector(".donate-btn-2");
+const gameSoundCheckBox = document.querySelector("#game-sound-checkbox");
+const audio = new Audio();
+const audio2 = new Audio();
 let displayEl = document.querySelector("#display-el");
 let aiScoreEl = document.querySelector("#ai-score-el");
 let humanScoreEl = document.querySelector("#human-score-el");
@@ -20,6 +23,16 @@ let gameCount = 0;
 let aiScore = 0;
 let humanScore = 0;
 
+gameSoundCheckBox.addEventListener("change", function () {
+  if (gameSoundCheckBox.checked) {
+    audio2.src = "sounds/game_music.mp3";
+    audio2.loop = true;
+    audio2.volume = 0.5;
+    audio2.play();
+  } else {
+    audio2.pause();
+  }
+});
 function generateRandom(game) {
   const randomCard = Math.floor(Math.random() * game.length);
   return game[randomCard];
@@ -30,6 +43,7 @@ function lose() {
   aiScoreEl.textContent = aiScore;
   displayEl.textContent = msg[3];
   displayEl.style.color = "var(--err-color)";
+  gameSound("sounds/fail.wav");
 }
 
 function win() {
@@ -37,6 +51,7 @@ function win() {
   humanScoreEl.textContent = humanScore;
   displayEl.textContent = msg[2];
   displayEl.style.color = "var(--success-color)";
+  gameSound("sounds/win.wav");
 }
 
 function checkGame() {
@@ -44,6 +59,7 @@ function checkGame() {
   if (chosenHumanCardEl.textContent === chosenAiCardEl.textContent) {
     displayEl.textContent = msg[1];
     displayEl.style.color = "var(--draw-color)";
+    gameSound("sounds/draw.wav");
   }
   // if human = rock & ai = papper (you lose)
   else if (
@@ -94,6 +110,7 @@ function renderGame() {
   checkGame();
   gameCount++;
   gameCountEl.textContent = `Game Count: ${gameCount}`;
+  // gameSound("sounds/click.wav");
 
   if (aiScore > humanScore) {
     aiScoreEl.style.color = `var(--success-color)`;
@@ -105,6 +122,13 @@ function renderGame() {
     aiScoreEl.style.color = `var(--draw-color)`;
     humanScoreEl.style.color = `var(--draw-color)`;
   }
+}
+
+function gameSound(src) {
+  audio.src = src;
+  audio.loop = false;
+  audio.volume = 0.5;
+  audio.play();
 }
 
 getHelp.addEventListener("click", function () {
