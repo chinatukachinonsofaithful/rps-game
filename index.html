@@ -1,144 +1,129 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta
-            name="description"
-            content="Play Rock Paper Scissors online! Challenge the AI, track your score, and enjoy a fun, responsive game built with HTML, CSS, and JavaScript."
-        />
-        <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Rock Paper Scissors Online" />
-        <meta
-            property="og:description"
-            content="Play Rock Paper Scissors online and challenge the AI!"
-        />
-        <meta
-            property="og:url"
-            content="https://rps-game-ten-rouge.vercel.app/"
-        />
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Play Rock Paper Scissors online! Challenge the AI, track your score, and enjoy a fun, responsive game built with HTML, CSS, and JavaScript."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Rock Paper Scissors Online" />
+    <meta
+      property="og:description"
+      content="Play Rock Paper Scissors online and challenge the AI!"
+    />
+    <meta property="og:url" content="https://rps-game-ten-rouge.vercel.app/" />
 
-        <meta
-            name="google-site-verification"
-            content="dCQLx-15jqVsqUc9SUeZhT-oczELg4bFlhUFzZc4_o0"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Rock Paper Scissors Online - Play Free RPS Game</title>
+    <meta
+      name="google-site-verification"
+      content="dCQLx-15jqVsqUc9SUeZhT-oczELg4bFlhUFzZc4_o0"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors Online - Play Free RPS Game</title>
 
-        <link rel="stylesheet" href="style.css" />
-        <link rel="stylesheet" href="font-awesome/css/all.css" />
-    </head>
-    <body>
-        <!--NAV BAR-->
-        <header>
-            <div class="container">
-                <div class="left-nav">
-                    <a href="">RPS Game</a>
-                </div>
-                <div class="right-nav">
-                    <span id="light-mode" class="fa fa-sun"></span>
-                    <span id="dark-mode" class="fa fa-moon"></span>
-                    <button type="button" class="donate-btn-1" id="donate">
-                        Donate <span class="fa fa-hand-holding-heart"></span>
-                    </button>
-                </div>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="font-awesome/css/all.css" />
+  </head>
+  <body>
+    <!--NAV BAR-->
+    <header>
+      <div class="container">
+        <div class="left-nav">
+          <a href="">RPS Game</a>
+        </div>
+        <div class="right-nav">
+          <span id="light-mode" class="fa fa-sun"></span>
+          <span id="dark-mode" class="fa fa-moon"></span>
+          <button type="button" class="donate-btn-1" id="donate">
+            Donate <span class="fa fa-hand-holding-heart"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!--GAME-->
+    <main>
+      <div class="container">
+        <!--SCORE BOARD-->
+        <div class="game-score-board">
+          <h2 class="score-board">Score Board</h2>
+          <!--SCORES-->
+          <div class="scores">
+            <!--HUMAN SCORE-->
+            <div class="human-score">
+              <h1 id="human-score-el">0</h1>
+              <h2 class="player-el">Human</h2>
+              <h3 class="chosen-human-card-el"></h3>
             </div>
-        </header>
-
-        <!--GAME-->
-        <main>
-            <div class="container">
-                <!--SCORE BOARD-->
-                <div class="game-score-board">
-                    <h2 class="score-board">Score Board</h2>
-                    <!--SCORES-->
-                    <div class="scores">
-                        <!--HUMAN SCORE-->
-                        <div class="human-score">
-                            <h1 id="human-score-el">0</h1>
-                            <h2 class="player-el">Human</h2>
-                            <h3 class="chosen-human-card-el"></h3>
-                        </div>
-                        <!--AI SCORE-->
-                        <div class="ai-score">
-                            <h1 id="ai-score-el">0</h1>
-                            <h2 class="player-el">AI</h2>
-                            <h3 class="chosen-ai-card-el"></h3>
-                        </div>
-                    </div>
-                </div>
-
-                <!--DISPLAY-->
-                <h2 id="display-el">Start Game</h2>
-
-                <!--CARDS-->
-                <div class="cards">
-                    <!--ROCK-->
-                    <button type="button" class="cards-btn" id="rock-btn">
-                        ✊Rock
-                    </button>
-                    <!--PAPPER-->
-                    <button type="button" class="cards-btn" id="papper-btn">
-                        🤚Papper
-                    </button>
-                    <!--SCISSORS-->
-                    <button type="button" class="cards-btn" id="scissors-btn">
-                        ✌️Scissors
-                    </button>
-                </div>
-                <!--RESET BTN-->
-                <button type="button" id="reset-btn">Reset</button>
-                <p id="game-count-el">Game Count:</p>
-                <p id="get-help">How to play?</p>
-                <p>
-                    <label for="game-sound-checkbox" name="sound"
-                        >Game Sound
-                    </label>
-                    <input
-                        type="checkbox"
-                        name="sound"
-                        value="value"
-                        id="game-sound-checkbox"
-                    />
-                </p>
+            <!--AI SCORE-->
+            <div class="ai-score">
+              <h1 id="ai-score-el">0</h1>
+              <h2 class="player-el">AI</h2>
+              <h3 class="chosen-ai-card-el"></h3>
             </div>
-        </main>
-        <footer class="site-footer">
-            <div class="container">
-                <h2 class="footer-title">
-                    Rock Paper Scissors (Faithful's Edition)
-                </h2>
+          </div>
+        </div>
 
-                <nav class="footer-links">
-                    <a href="#">Home</a>
-                    <!--<a id="get-help">How to play?</a>-->
+        <!--DISPLAY-->
+        <h2 id="display-el">Start Game</h2>
 
-                    <button type="button" class="donate-btn-2" id="donate">
-                        Donate <span class="fa fa-hand-holding-heart"></span>
-                    </button>
-                </nav>
+        <!--CARDS-->
+        <div class="cards">
+          <!--ROCK-->
+          <button type="button" class="cards-btn" id="rock-btn">✊Rock</button>
+          <!--PAPPER-->
+          <button type="button" class="cards-btn" id="papper-btn">
+            🤚Papper
+          </button>
+          <!--SCISSORS-->
+          <button type="button" class="cards-btn" id="scissors-btn">
+            ✌️Scissors
+          </button>
+        </div>
+        <!--RESET BTN-->
+        <button type="button" id="reset-btn">Reset</button>
+        <p id="game-count-el">Game Count:</p>
+        <p id="get-help">How to play?</p>
+        <p>
+          <label for="game-sound-checkbox" name="sound">Game Sound </label>
+          <input
+            type="checkbox"
+            name="sound"
+            value="value"
+            id="game-sound-checkbox"
+          />
+        </p>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <h2 class="footer-title">Rock Paper Scissors (Faithful's Edition)</h2>
 
-                <!-- Social / Meet the Developer -->
-                <a
-                    href="https://www.linkedin.com/in/chinatukachinonsofaithful/"
-                    target="_blank"
-                    aria-label="LinkedIn"
-                    class="social-dev-link"
-                >
-                    <img
-                        src="your-photo.jpg"
-                        alt="Faithful"
-                        class="dev-photo"
-                    />
-                    <span class="dev-text">Meet the developer: Faithful</span>
-                    <span class="fab fa-linkedin dev-linkedin"></span>
-                </a>
+        <nav class="footer-links">
+          <a href="#">Home</a>
+          <!--<a id="get-help">How to play?</a>-->
 
-                <p class="copyright">
-                    © 2026 Rock Paper Scissors (Faithful's Edition)
-                </p>
-            </div>
-        </footer>
+          <button type="button" class="donate-btn-2" id="donate">
+            Donate <span class="fa fa-hand-holding-heart"></span>
+          </button>
+        </nav>
 
-        <script src="script.js"></script>
-    </body>
+        <!-- Social / Meet the Developer -->
+        <a
+          href="https://chinonsofaithfulchinatuka.vercel.app/"
+          target="_blank"
+          aria-label="Portfolio of Faithful"
+          class="social-dev-link"
+        >
+          <img src="your-photo.jpg" alt="Faithful" class="dev-photo" />
+          <span class="dev-text">Meet the developer: Faithful</span>
+          <span class="fa fa-briefcase"></span>
+        </a>
+
+        <p class="copyright">© 2026 Rock Paper Scissors (Faithful's Edition)</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
